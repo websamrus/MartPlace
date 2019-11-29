@@ -18,6 +18,7 @@ h3 {
 a {
     display: inline-block;
     text-decoration: none;
+    color: #555;
     cursor: pointer;
 }
 
@@ -49,6 +50,7 @@ body {
 
 button {
     cursor: pointer;
+    outline: transparent;
 }
 
 .button-a {
@@ -69,4 +71,5 @@ button {
 .title-m {
     font-size: 24px;
     color: #000;
+    outline: transparent;
 }
