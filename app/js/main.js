@@ -6,6 +6,12 @@ $(function() {
         readOnly: true
       });
 
+      $(".items__slider").slick({
+        
+      })
+
       var mixer = mixitup('.products__box');
+
+
 
 });
