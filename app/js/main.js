@@ -10,6 +10,13 @@ $(function() {
         
       })
 
+      $(".followers__slider").slick({
+        infinite: true,
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        variableWidth: true
+      })
+
       var mixer = mixitup('.products__box');
 
 

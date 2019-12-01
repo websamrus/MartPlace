@@ -312,7 +312,7 @@
     &-box {
       padding: 50px 50px 25px 50px;
       box-shadow: 0px 2px 4px 0px rgba(108, 111, 115, 0.1);
-    background-color: #fff;
+      background-color: #fff;
     }
     &-text {
       margin-bottom: 25px;
@@ -510,13 +510,12 @@
       }
     }
   }
-  &-inner{
+  &-inner {
     box-shadow: 0px 2px 4px 0px rgba(108, 111, 115, 0.1);
     background-color: #fff;
   }
   &-box {
     padding: 30px 30px 0 30px;
-
   }
   &-title {
     margin-bottom: 20px;
@@ -556,7 +555,7 @@
   &-info {
     padding: 15px 30px;
     border-top: 1px solid #ececec;
-    
+
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -601,4 +600,96 @@
 .products__btn-button .mixitup-control-active {
   background-color: $blue;
   color: #fff;
+}
+
+//followers//
+.followers {
+  background-color: #eff1f5;
+  &__inner {
+    padding: 120px 0;
+  }
+  &__title {
+    .items__title-btn {
+      background-color: $blue;
+    }
+  }
+}
+
+.followers__slider {
+  display: flex;
+  justify-content: space-between;
+  .products__item {
+    margin-right: 30px;
+  }
+  .slick-arrow {
+    position: absolute;
+    width: 50px;
+    height: 45px;
+    background-color: transparent;
+    font-size: 0;
+    top: -143px;
+    border: none;
+    z-index: 2;
+    &::before {
+      font-family: "Linearicons-Free";
+      color: #fff;
+      z-index: 5;
+      font-size: 14px;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+  }
+  .slick-next {
+    right: 87px;
+    &::before {
+      content: "\e875";
+    }
+  }
+  .slick-prev {
+    right: 28px;
+    &::before {
+      content: "\e876";
+    }
+  }
+}
+
+//fun//
+.fun {
+  background-color: #212225;
+  &__inner {
+    padding: 90px 0 85px;
+    display: flex;
+    justify-content: space-between;
+    color: #fff;
+  }
+  &__item {
+    text-align: center;
+    font-family: "Linearicons-Free";
+    font-size: 48px;
+    .lnr-briefcase {
+      color: #feb71d;
+    }
+    .lnr-cloud-download {
+      color: #58c9e9;
+    }
+    .lnr-smile {
+      color: #77de51;
+    }
+    .lnr-users {
+      color: #ff6a6d;
+    }
+
+    &-text {
+      font-family: "Quicksand", sans-serif;
+      font-size: 36px;
+      line-height: 36px;
+      margin: 30px 0 20px;
+      span {
+        display: block;
+        font-size: 18px;
+        color: #fff;
+      }
+    }
+  }
 }
