@@ -1,4 +1,11 @@
 $blue: #0674ec;
 $dgrey: #333;
 $lgrey: #747b86;
-$grey: #555
+$grey: #555;
+$purple: #7347c1;
+
+@mixin bg-img {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}

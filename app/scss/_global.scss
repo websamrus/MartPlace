@@ -1,85 +1,121 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
 }
 
 *,
 *::before,
 *::after {
-    box-sizing: inherit;
+  box-sizing: inherit;
 }
 
 h1,
 h2,
 h3 {
-    margin: 0;
-    letter-spacing: 0;
+  margin: 0;
+  letter-spacing: 0;
 }
 
 a {
-    display: inline-block;
-    text-decoration: none;
-    color: #555;
-    cursor: pointer;
+  display: inline-block;
+  text-decoration: none;
+  color: #555;
+  cursor: pointer;
 }
 
 ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+  list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 li {
-    display: inline-block;
+  display: inline-block;
+}
+
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.content {
+  flex: 1 0 auto;
+}
+.footer {
+  flex: 0 0 auto;
 }
 
 body {
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 400;
-    font-size: 16px;
-    // background-image: url(../images/bg.jpg);
-    // background-position: center;
-    // background-size: cover;
-    // background-repeat: no-repeat;
+  font-family: "Quicksand", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  color: $grey;
+  line-height: 30px;
 }
 
 .container {
-    max-width: 1170px;
-    margin: 0 auto;
-    padding: 0 15px;
+  max-width: 1170px;
+  margin: 0 auto;
+  padding: 0 15px;
+}
+
+.container-max {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
 }
 
 button {
-    cursor: pointer;
-    outline: transparent;
+  cursor: pointer;
+  outline: transparent;
 }
 
 .button-a {
-    //width: 200px;
-    height: 60px;
-    border: 1px solid #fff;
-    border-radius: 40px;
-    color: #fff;
-    // padding: 20px 0;
-   line-height: 58px;
+  height: 60px;
+  border: 1px solid #fff;
+  border-radius: 40px;
+  color: #fff;
+  line-height: 58px;
+  text-align: center;
+  transition: all 0.6s;
+  &:hover {
+    background-color: #fff;
+    color: $blue;
+  }
+}
+
+.title {
+  &__title {
     text-align: center;
-    transition: all .6s;
-    &:hover {
-        background-color: #fff;
-        color: $blue;
+    font-size: 36px;
+    color: #000;
+    margin-bottom: 30px;
+    span {
+      color: $blue;
     }
+  }
+  &__text {
+    text-align: center;
+    width: 700px;
+    margin: 0 auto 50px;
+  }
 }
 
 .title-b {
-    font-size: 30px;
-    color: #000;
+  font-size: 30px;
+  color: #000;
 }
 
 .title-m {
-    font-size: 24px;
-    color: #000;
+  font-size: 24px;
+  color: #000;
 }
 
 .title-s {
-    font-size: 20px;
-    color: #000;
+  font-size: 20px;
+  color: #000;
 }

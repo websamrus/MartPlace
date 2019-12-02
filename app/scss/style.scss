@@ -280,7 +280,7 @@
     &-btn {
       width: 115px;
       height: 50px;
-      background-color: #7347c1;
+      background-color: $purple;
       border-radius: 25px;
     }
   }
@@ -487,9 +487,7 @@
   &-img {
     cursor: pointer;
     min-height: 230px;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+    @include bg-img;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -542,14 +540,12 @@
     margin-left: 20px;
     display: flex;
     align-items: center;
-    color: #7347c1;
+    color: $purple;
     img {
       margin-right: 10px;
     }
   }
   &-text {
-    color: $grey;
-    line-height: 30px;
     margin-bottom: 25px;
   }
   &-info {
@@ -695,77 +691,172 @@
 }
 
 //choose//
-.choose{
-  &__inner{
+.choose {
+  &__inner {
     padding: 100px 0 120px;
     text-align: center;
   }
-  &__title{
-    font-size: 36px;
-    color: #000;
-    margin-bottom: 30px;
-    span{
-      color:$blue;
-    }
-  }
-  &__text{
-    color:$grey;
-    line-height: 30px;
-    width: 700px;
-    margin: 0 auto 50px;
-  }
-  &__box{
+
+  &__box {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
   }
 }
 
-.choose__item{
+.choose__item {
   max-width: 360px;
   width: 100%;
   padding: 25px 25px 60px;
   box-shadow: 0px 2px 50px 0px rgba(0, 0, 0, 0.08);
   margin-bottom: 30px;
-  &-icon{
+  &-icon {
     font-family: "Linearicons-Free";
     font-size: 60px;
     margin: -15px 0 30px;
   }
-  .lnr-license{
+  .lnr-license {
     color: $blue;
   }
-  .lnr-magic-wand{
+  .lnr-magic-wand {
     color: #7f4ec2;
   }
-  .lnr-lock{
+  .lnr-lock {
     color: #77de51;
   }
-  .lnr-chart-bars{
+  .lnr-chart-bars {
     color: #feb71d;
   }
-  .lnr-leaf{
+  .lnr-leaf {
     color: #58c9e9;
   }
-  .lnr-phone{
+  .lnr-phone {
     color: #ff6a6d;
   }
-  &-number{
+  &-number {
     font-size: 48px;
     font-weight: 300;
     color: #5c87f8;
     text-align: left;
-    opacity: .2;
+    opacity: 0.2;
   }
-  &-text{
-    color: $grey;
-    line-height: 30px;
+  &-text {
     margin-top: 30px;
   }
 }
 
+//trade//
+.trade {
+  &__inner {
+    display: flex;
+  }
+  &__box {
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  &__sell,
+  &__buy {
+    width: 50%;
+    height: 560px;
+    @include bg-img;
+    padding: 100px 20px 40px;
+    text-align: center;
+    color: #fff;
+    line-height: 30px;
+  }
+  &__sell {
+    background-image: url(../images/trade/bg-sell.jpg);
+    a,
+    a:hover {
+      color: $blue;
+    }
+  }
+  &__buy {
+    background-image: url(../images/trade/bg-buy.jpg);
+    a,
+    a:hover {
+      color: $purple;
+    }
+  }
+  &__title {
+    font-size: 36px;
+    margin: 50px 0 25px;
+  }
 
+  &__btn {
+    width: 190px;
+    background-color: #fff;
+    margin-top: 50px;
+    &:hover {
+      width: 210px;
+    }
+  }
+}
 
+//feedback//
+.feedback {
+  &__inner {
+    padding: 120px 0;
+    text-align: center;
+    a {
+      width: 190px;
+      color: #fff;
+      background-color: $blue;
+      &:hover {
+        color: $blue;
+        background-color: #fff;
+        border: 1px solid $blue;
+      }
+    }
+  }
 
+  &__box {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 65px;
+  }
+}
 
+.feedback__item {
+  padding: 50px 40px;
+  box-shadow: 0px 2px 50px 0px rgba(0, 0, 0, 0.08);
+  max-width: 555px;
+  width: 100%;
+  text-align: left;
+  border-left: 2px solid $blue;
 
+  .feedback__user {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+    margin-bottom: 30px;
+    padding-right: 70px;
+    &::after {
+      content: "\e83f";
+      font-family: "Linearicons-Free";
+      font-size: 60px;
+      color: #e8e8e8;
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transform: translateY(-50%);
+    }
+
+    &-img {
+      margin-right: 20px;
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      @include bg-img;
+    }
+    &-name {
+      span {
+        display: block;
+        font-size: 16px;
+        color: $grey;
+        margin-top: 5px;
+      }
+    }
+  }
+}
