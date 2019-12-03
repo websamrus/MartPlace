@@ -3,9 +3,13 @@ $dgrey: #333;
 $lgrey: #747b86;
 $grey: #555;
 $purple: #7347c1;
-
 @mixin bg-img {
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+@mixin flex-sb {
+    display: flex;
+    justify-content: space-between;
 }
