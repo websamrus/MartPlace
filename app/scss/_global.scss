@@ -119,3 +119,36 @@ button {
   font-size: 20px;
   color: #000;
 }
+
+.breadcrumbs {
+  &__list {
+    color: #bfcada;
+    li {
+      a{
+        color: #bfcada;
+        transition: all .6s;
+        &:hover{
+          color:#fff;
+          font-weight: 500;
+        }
+      }
+      & + li {
+        padding-left: 24px;
+        display: inline-block;
+        position: relative;
+        &::before {
+          content: "/";
+          position: absolute;
+          left: 7px;
+        }
+      }
+      &:last-child{
+        a{
+          color:#fff;
+          font-weight: 500;
+        }
+      }
+    }
+  }
+  
+}
