@@ -115,6 +115,10 @@
     content: "\e83f";
 }
 
+.lnr-chevron-down:before {
+	content: "\e874";
+}
+
 @font-face {
     font-family: 'icomoon';
     src: url('../fonts/icomoon.eot?ubnc30');
