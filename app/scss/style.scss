@@ -7,15 +7,12 @@
 
 .header__top-inner {
   height: 100px;
-  & a {
-    color: #000;
-  }
 }
 
 .header__top-inner,
 .header__logo,
 .header__seller,
-.header__user,
+.header__user-inner,
 .header__bottom-inner {
   @include flex-sb;
   align-items: center;
@@ -31,6 +28,7 @@
     font-size: 30px;
     line-height: 28px;
     font-weight: 700;
+    color: #000;
     & span {
       color: $blue;
     }
@@ -53,11 +51,19 @@
     }
   }
   &-info {
+    height: 82px;
     align-self: flex-start;
-    li + li {
+    margin-top: 40px;
+    @include flex-sb;
+    .info-icon + .info-icon {
       margin-left: 30px;
     }
-    a {
+    .info-icon {
+      position: relative;
+    }
+    &-message,
+    &-alarm,
+    &-cart {
       min-width: 23px;
       height: 23px;
       line-height: 22px;
@@ -98,6 +104,7 @@
 }
 
 .header__user {
+  position: relative;
   &-foto {
     margin: 0 20px 0 40px;
   }
@@ -166,6 +173,216 @@
     }
   }
 }
+.header__user {
+  height: 90px;
+  margin-top: 48px;
+  &:hover {
+    .user__menu {
+      height: auto;
+      border-top-width: 2px;
+      overflow: inherit;
+      ul {
+        padding: 20px;
+      }
+    }
+  }
+}
+
+.user__menu {
+  border-radius: 5px;
+  width: 270px;
+  position: absolute;
+  @include trans06;
+  height: 0;
+  overflow: hidden;
+  top: 70px;
+  right: 0px;
+  z-index: 2;
+  box-shadow: 0px 5px 40px 0px rgba(82, 85, 90, 0.2);
+  background-color: rgb(255, 255, 255);
+  border-top: 0px solid $blue;
+  ul {
+    @include trans06;
+    padding: 0 20px;
+    position: relative;
+    &::before {
+      content: "";
+      width: 20px;
+      height: 23px;
+      background-image: url(../images/header/polygon.png);
+      position: absolute;
+      top: -10px;
+      right: 30px;
+    }
+  }
+  li {
+    display: block;
+  }
+  &-icon {
+    display: block;
+    padding: 17px 0 17px 40px;
+    line-height: 0;
+    color: $bgrey;
+    position: relative;
+    &::before {
+      font-family: "Linearicons-Free";
+      position: absolute;
+      left: 10px;
+    }
+    &:hover {
+      background-color: $blue;
+      color: #fff;
+    }
+  }
+}
+
+.header__seller-menu {
+  border-radius: 5px;
+  box-shadow: 0px 5px 40px 0px rgba(82, 85, 90, 0.2);
+  border-top: 0px solid $blue;
+  position: absolute;
+  z-index: 2;
+  //height: 0;
+  overflow: hidden;
+  top: 78px;
+  right: -25px;
+  background-color: #fff;
+  color: #000;
+  @include trans06;
+  .header__seller-inner {
+    @include trans06;
+    position: relative;
+    &::before {
+      content: "";
+      width: 20px;
+      height: 23px;
+      background-image: url(../images/header/polygon.png);
+      position: absolute;
+      top: -10px;
+      right: 40px;
+    }
+  }
+}
+
+.header__seller-message:hover{
+
+}
+
+
+.header__seller-cart:hover {
+  .cart__menu {
+    width: 400px;
+    border-top-width: 2px;
+    overflow: inherit;
+  }
+}
+.cart__menu {
+  width: 0px;
+  .cart__item {
+    background-color: #fff;
+    @include trans06;
+    &:hover {
+      background-color: rgb(192, 238, 247);
+    }
+    @include flex-sb;
+    padding: 25px;
+    border-bottom: solid 1px #e8ebf0;
+    &-img {
+      width: 80px;
+      height: 70px;
+      @include bg-img;
+    }
+    &-text {
+      max-width: 180px;
+    }
+    &-title {
+      line-height: 22px;
+      font-weight: 500;
+      margin-bottom: 5px;
+      color: #000;
+      @include trans06;
+      &:hover {
+        color: $blue;
+      }
+    }
+    &-category {
+      font-size: 15px;
+      color: $purple;
+      display: flex;
+      align-items: center;
+      span {
+        margin-left: 5px;
+      }
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    &-del {
+      position: relative;
+      font-size: 15px;
+      color: #818c98;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background-color: #f1ecf9;
+      margin-bottom: 10px;
+      @include trans06;
+      &:hover {
+        background-color: $blue;
+        color: #fff;
+      }
+    }
+    &-price {
+      min-width: 50px;
+      height: 30px;
+      @include flex-center;
+      color: $blue;
+      background-color: $lblue;
+      border-radius: 50px;
+      @include trans06;
+      &:hover {
+        background-color: $blue;
+        color: #fff;
+      }
+    }
+  }
+  .cart__total {
+    padding: 25px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: 500;
+    &-sum {
+      padding-left: 30px;
+    }
+  }
+  .cart__btn {
+    display: flex;
+    .cart-btn {
+      width: 50%;
+      height: 60px;
+      @include flex-center;
+      color: #fefefe;
+      font-size: 15px;
+    }
+    &-cart {
+      background-color: $purple;
+      @include trans06;
+    }
+    &-check {
+      background-color: $blue;
+      @include trans06;
+    }
+    &-check:hover,&-cart:hover{
+      opacity: .8;
+      color: #000;
+    }
+  }
+}
+
+//end header//
 
 //start main//
 .main {
@@ -418,6 +635,7 @@
       background-color: #fff;
     }
     &-text {
+      line-height: 30px;
       margin-bottom: 25px;
     }
     &-info {
@@ -489,6 +707,7 @@
     position: relative;
     color: $lgrey;
     &-text {
+      line-height: 30px;
       margin-right: 25px;
       padding: 10px 0;
     }
@@ -655,6 +874,7 @@
     }
   }
   &-text {
+    line-height: 30px;
     margin-bottom: 25px;
   }
   &-info {
@@ -783,6 +1003,7 @@
       color: #ff6a6d;
     }
     &-text {
+      line-height: 30px;
       font-family: "Quicksand", sans-serif;
       font-size: 36px;
       line-height: 36px;
@@ -846,6 +1067,7 @@
     opacity: 0.2;
   }
   &-text {
+    line-height: 30px;
     margin-top: 30px;
   }
 }
@@ -913,6 +1135,7 @@
     padding: 120px 0;
     text-align: center;
   }
+
   &__btn a {
     width: 190px;
     color: #fff;
@@ -977,6 +1200,9 @@
         color: $blue;
       }
     }
+  }
+  &-review {
+    line-height: 30px;
   }
 }
 
@@ -1138,6 +1364,7 @@
     &-logo .header__logo {
       margin-bottom: 30px;
       &-text {
+        line-height: 30px;
         color: #fff;
         font-size: 24px;
       }
@@ -1149,6 +1376,7 @@
       margin-bottom: 35px;
     }
     &-text {
+      line-height: 30px;
       margin-bottom: 25px;
     }
     &-tel,
@@ -1718,9 +1946,12 @@
   .new-products__arrow.lnr-arrow-right {
     margin-left: 20px;
   }
-  a.new-products__arrow.lnr{
+  a.new-products__arrow.lnr {
     color: #fff;
     background-color: $purple;
+  }
+  a.new-products__arrow:hover {
+    color: $blue;
   }
   .active,
   a:hover {
