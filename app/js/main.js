@@ -17,6 +17,28 @@ $(function() {
         variableWidth: true
       })
 
+      
+    $(".js-range-slider").ionRangeSlider({
+      type: "double",
+      min: 0,
+      max: 350,
+      from: 30,
+      to: 300,
+      prefix: "$"
+  });
+
+  $('.filter__select-list').on('click', function(){
+    $('.products__item').addClass('list__item');
+    $('.filter__select-list').addClass('active');
+    $('.filter__select-grid').removeClass('active');
+  });
+
+  $('.filter__select-grid').on('click', function(){
+    $('.products__item').removeClass('list__item');
+    $('.filter__select-grid').addClass('active');
+    $('.filter__select-list').removeClass('active');
+  });
+
       var mixer = mixitup('.products__box');
 
 

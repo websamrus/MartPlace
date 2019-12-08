@@ -14,3 +14,28 @@ $purple: #7347c1;
     display: flex;
     justify-content: space-between;
 }
+@mixin flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin top50 {
+    top:50%;
+    transform: translateY(-50%);
+}
+
+@mixin topLeft50 {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin trans06 {
+    transition: all 0.6s;
+}
+
+
+
+
+

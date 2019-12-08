@@ -116,7 +116,14 @@
 }
 
 .lnr-chevron-down:before {
-	content: "\e874";
+    content: "\e874";
+    @include top50;
+}
+.lnr-arrow-left:before {
+	content: "\e879";
+}
+.lnr-arrow-right:before {
+	content: "\e87a";
 }
 
 @font-face {

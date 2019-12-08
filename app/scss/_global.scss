@@ -72,6 +72,15 @@ body {
 button {
   cursor: pointer;
   outline: transparent;
+  background-color: $blue;
+  color: #fff;
+  border:1px solid transparent;
+  @include trans06;
+  &:hover{
+    background-color: #fff;
+    color: $blue;
+    border:1px solid $blue;
+  }
 }
 
 .button-a {
@@ -81,7 +90,7 @@ button {
   color: #fff;
   line-height: 58px;
   text-align: center;
-  transition: all 0.6s;
+  @include trans06;
   &:hover {
     background-color: #fff;
     color: $blue;
@@ -124,7 +133,7 @@ button {
   &__list {
     color: #bfcada;
     li {
-      a{
+      span,a{
         color: #bfcada;
         transition: all .6s;
         &:hover{
@@ -143,7 +152,7 @@ button {
         }
       }
       &:last-child{
-        a{
+        span, a{
           color:#fff;
           font-weight: 500;
         }
