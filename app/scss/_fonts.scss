@@ -114,10 +114,12 @@
 .lnr-bubble:before {
     content: "\e83f";
 }
-
+.lnr-chevron-up:before {
+	content: "\e873";
+}
 .lnr-chevron-down:before {
     content: "\e874";
-    @include top50;
+    @include topLeft50;
 }
 .lnr-arrow-left:before {
 	content: "\e879";
@@ -157,6 +159,9 @@
 .lnr-trash:before {
     content: "\e811";
     @include topLeft50;
+}
+.lnr-star:before {
+	content: "\e814";
 }
 @font-face {
     font-family: 'icomoon';
