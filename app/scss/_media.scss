@@ -1,0 +1,116 @@
+@media screen and (max-width: 1030px) {
+  .footer__inner {
+    flex-wrap: wrap;
+    padding: 50px 0;
+  }
+  .footer__col-first {
+    min-width: 100%;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $llgrey;
+    margin-bottom: 20px;
+    a {
+      display: block;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .main {
+    padding: 100px 0 140px;
+    .main__title {
+      font-size: 50px;
+      line-height: 60px;
+    }
+    .main__text {
+      margin-top: 20px;
+      line-height: 30px;
+      margin-bottom: 50px;
+    }
+  }
+}
+
+@media screen and (max-width: 750px) {
+  .main {
+    padding: 50px 0 70px;
+  }
+  .footer__inner {
+    justify-content: flex-start;
+  }
+  .footer__col-l + .footer__col-l {
+    margin-left: 30%;
+  }
+  .footer__col-newsletter {
+    min-width: 100%;
+    padding-top: 10px;
+    border-top: 1px solid $llgrey;
+    margin-top: 20px;
+  }
+}
+
+@media screen and (max-width: 470px) {
+  .main {
+    padding: 30px 0 50px;
+    .main__title {
+      font-size: 30px;
+      line-height: 40px;
+    }
+    .main__text {
+        margin-top: 10px;
+        font-size: 18px;
+        line-height: 25px;
+        margin-bottom: 20px;
+      }
+    .main__btn{
+        a{
+            display: inline-block;
+        }
+        .button-a+.button-a {
+            margin-left: 0px;
+            margin-top: 20px;
+        }
+    }
+  }
+  .banner__inner {
+    padding: 50px 0;
+    .banner__title {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+  }
+  .footer__col-title {
+    margin-bottom: 25px;
+  }
+  .footer__col-l + .footer__col-l {
+    margin-left: 10%;
+  }
+}
+
+@media screen and (max-width: 420px) {
+  .footer__col-l + .footer__col-l {
+    margin-left: 0;
+    padding-top: 10px;
+    border-top: 1px solid $llgrey;
+    margin-top: 20px;
+  }
+  .footer__col-l {
+    min-width: 100%;
+  }
+  .footer__col-search.header__search {
+    form {
+      min-width: 260px;
+      width: 100%;
+      button {
+        width: 80px;
+      }
+    }
+  }
+  .footer__col-social {
+    margin-top: 20px;
+    li,
+    li + li {
+      margin-left: 0;
+      margin-top: 10px;
+      margin-right: 15%;
+    }
+  }
+}
