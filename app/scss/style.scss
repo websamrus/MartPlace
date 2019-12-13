@@ -2187,6 +2187,13 @@
 
 .filter__inner.favorite__filter {
     padding: 0;
+    .filter__link {
+        font-size: 24px;
+        color: #000;
+        span {
+            font-weight: 500;
+        }
+    }
     .products__filter {
         padding: 30px;
         border-left: 1px solid #eceff2;
@@ -2194,19 +2201,25 @@
         cursor: pointer;
         &:hover {
             .products__filter-list {
-                display: block;
                 height: 250px;
                 overflow: visible;
                 border-top: 2px solid $blue;
+                padding: 20px 30px 0;
+                font-size: 15px;
             }
         }
         &-list {
+            display: block;
             border-top: 0px solid $blue;
             width: 270px;
             top: 80px;
             left: 0;
+            padding: 0px 20px;
             height: 0px;
             overflow: hidden;
+            @include trans06;
+            font-size: 0;
+            line-height: 20px;
             &::before {
                 width: 20px;
                 height: 23px;
@@ -2249,5 +2262,55 @@
 .favorites__content {
     .new-products__pagination {
         @include flex-center;
+    }
+}
+
+//howItWork.html
+.main__inner.work__main {
+    text-align: center;
+    padding: 35px 0 10px;
+    .main__title {
+        font-size: 30px;
+        font-weight: 500;
+        line-height: 50px;
+        margin-bottom: 40px;
+        span {
+            font-weight: 300;
+        }
+    }
+}
+
+.work__inner.work__bg {
+    background-color: #eff1f5;
+}
+
+.work__item {
+    padding: 100px 0;
+    @include flex-sb;
+}
+
+.work__content {
+    max-width: 485px;
+    padding-left: 20px;
+    &-title {
+        margin: 35px 0;
+    }
+    &-text {
+        line-height: 30px;
+        margin-bottom: 20px;
+    }
+    &-btn {
+        box-shadow: 0px 4px 30px 0px rgba(0, 0, 0, 0.1);
+        height: 50px;
+        width: 170px;
+        border-radius: 40px;
+        color: $blue;
+        @include flex-center;
+        outline: transparent;
+        @include trans06;
+        &:hover {
+            background-color: $blue;
+            color: #fff;
+        }
     }
 }
