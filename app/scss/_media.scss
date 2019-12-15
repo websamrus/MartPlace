@@ -12,9 +12,105 @@
       display: block;
     }
   }
+  .drop-down__list.drop-down__page {
+    flex-wrap: wrap;
+    left: auto;
+    right: 0;
+    width: 470px;
+  }
+  .drop-down__items {
+    width: 100%;
+    & + & {
+      margin-top: 20px;
+    }
+  }
 }
 
 @media screen and (max-width: 960px) {
+  .header__bottom-inner {
+    position: static;
+  }
+  .header__bottom {
+    position: relative;
+  }
+  .header__menu-list {
+    display: none;
+    width: 100%;
+    position: absolute;
+    top: 82px;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    background-color: #fff;
+    border-top: 2px solid $blue;
+    border-bottom: 3px solid $blue;
+    & > li {
+      display: block;
+      & + li {
+        margin-left: 0;
+      }
+      & > a {
+        display: block;
+        text-align: center;
+        height: auto;
+        width: 100%;
+        border-bottom: 1px solid $llgrey;
+        &:hover {
+          color: #fff;
+          background-color: $blue;
+        }
+      }
+    }
+  }
+  .drop-down {
+    .drop-down__list {
+      width: 100%;
+      border-top: 0px solid transparent;
+      border-bottom: 1px solid $blue;
+      transition: all 0s;
+      display: none;
+      position: static;
+      height: auto;
+      border-top-width: 2px;
+      overflow: visible;
+      padding: 20px;
+      a {
+        line-height: 42px;
+      }
+      .drop-down__item {
+        overflow: visible;
+      }
+    }
+  }
+
+  .drop-down__list.drop-down__page {
+    display: none;
+    .drop-down__item{
+      justify-content: flex-start;
+      ul+ul{
+        margin-left: 30px;
+      }
+    }
+  }
+
+  .drop-down__list.active {
+    display: block;
+  }
+
+  .header__menu-btn {
+    display: block;
+    width: 30px;
+    cursor: pointer;
+    margin-right: 10px;
+    div {
+      height: 4px;
+      background-color: $blue;
+      & + div {
+        margin-top: 5px;
+      }
+    }
+  }
+
   .main {
     padding: 100px 0 140px;
     .main__title {
@@ -28,8 +124,59 @@
     }
   }
 }
+@media screen and(max-width: 890px) {
+  .header__seller-alarm,
+  .header__seller-message {
+    display: none;
+  }
+}
 
 @media screen and (max-width: 750px) {
+  .header__user-foto {
+    margin-left: 10px;
+  }
+  .header__user-menu {
+    z-index: 2;
+    position: absolute;
+    display: block;
+    right: 0;
+    top: 0;
+    width: 70px;
+    height: 100px;
+    background-color: $blue;
+    color: #fff;
+    font-weight: 900;
+    font-family: "Linearicons-Free";
+    font-size: 40px;
+    &::before {
+      @include topLeft50;
+    }
+  }
+  .header__user {
+    @include trans06;
+    height: 100px;
+    background-color: #eef1f3;
+    transform: translateX(100%);
+    &.active {
+      z-index: 1;
+      height: 100px;
+      transform: translateX(-35%);
+    }
+  }
+  .header__seller-btn {
+    display: none;
+  }
+  .header__seller-info {
+    margin-top: 20px;
+}
+  .header__seller-menu {
+    .cart__item-img {
+      display: none;
+    }
+  }
+  .cart__menu {
+    width: 320px;
+  }
   .main {
     padding: 50px 0 70px;
   }
@@ -47,7 +194,33 @@
   }
 }
 
+@media screen and (max-width: 600px) {
+  .header__seller-cart {
+    display: none;
+  }
+}
 @media screen and (max-width: 470px) {
+  .header__logo-text {
+    font-size: 22px;
+    span {
+      display: block;
+    }
+  }
+  .header__search form {
+    min-width: 260px;
+  }
+  .drop-down__list.drop-down__page {
+
+    .drop-down__item{
+     flex-wrap: wrap;
+     ul{
+       width: 100%;
+       &+ul{
+         margin-left: 0;
+       }
+     }
+    }
+  }
   .main {
     padding: 30px 0 50px;
     .main__title {
@@ -55,19 +228,19 @@
       line-height: 40px;
     }
     .main__text {
-        margin-top: 10px;
-        font-size: 18px;
-        line-height: 25px;
-        margin-bottom: 20px;
+      margin-top: 10px;
+      font-size: 18px;
+      line-height: 25px;
+      margin-bottom: 20px;
+    }
+    .main__btn {
+      a {
+        display: inline-block;
       }
-    .main__btn{
-        a{
-            display: inline-block;
-        }
-        .button-a+.button-a {
-            margin-left: 0px;
-            margin-top: 20px;
-        }
+      .button-a + .button-a {
+        margin-left: 0px;
+        margin-top: 20px;
+      }
     }
   }
   .banner__inner {
@@ -86,6 +259,14 @@
 }
 
 @media screen and (max-width: 420px) {
+  .header__search form {
+    min-width: 240px;
+  }
+
+  .user__menu {
+    right: auto;
+    left: 0;
+  }
   .footer__col-l + .footer__col-l {
     margin-left: 0;
     padding-top: 10px;
@@ -112,5 +293,13 @@
       margin-top: 10px;
       margin-right: 15%;
     }
+  }
+}
+//
+
+//min-width:
+@media screen and (min-width: 961px) {
+  .header__menu-list {
+    display: block !important;
   }
 }

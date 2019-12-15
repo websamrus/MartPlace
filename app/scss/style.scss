@@ -12,6 +12,7 @@
 
 .header__top-inner,
 .header__seller,
+.header__user,
 .header__user-inner,
 .header__bottom-inner {
   @include flex-sb;
@@ -19,9 +20,9 @@
 }
 
 .header__logo {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
   &-img {
     margin: 0 7px;
     width: 50px;
@@ -47,16 +48,20 @@
     border-radius: 20px;
     margin-right: 50px;
     text-align: center;
-    & a {
-      color: #fff;
-      font-size: 14px;
-      line-height: 35px;
+    color: #fff;
+    font-size: 14px;
+    line-height: 35px;
+    @include trans06;
+    &:hover{
+      color:$blue ;
+      background-color: #fff;
+      border:1px solid $blue
     }
   }
   &-info {
-    height: 82px;
+    height: 100px;
     align-self: flex-start;
-    margin-top: 40px;
+    margin-top: 50px;
     @include flex-sb;
     .info-icon {
       cursor: pointer;
@@ -107,6 +112,9 @@
 
 .header__user {
   position: relative;
+  &-inner{
+    height: 100px;
+  }
   &-foto {
     margin: 0 20px 0 40px;
   }
@@ -124,23 +132,29 @@
 
 .header__bottom-inner {
   height: 82px;
+  position: relative;
 }
 
+
 .header__menu-list {
-  & li {
-    & a {
+  & > li {
+    & > a {
       font-size: 15px;
       line-height: 42px;
       color: $dgrey;
       text-transform: uppercase;
       font-weight: 600;
       transition: all 0.8s;
+      padding: 0 5px;
+      height: 82px;
+      display: flex;
+      align-items: center;
       &:hover {
         color: $blue;
       }
     }
     & + li {
-      margin-left: 35px;
+      margin-left: 25px;
     }
   }
 }
@@ -175,10 +189,12 @@
     }
   }
 }
+.header__user-menu{
+  display: none;
+}
 
-.header__user {
-  height: 90px;
-  margin-top: 48px;
+.header__user-box {
+  position: relative;
   &:hover {
     .user__menu {
       height: auto;
@@ -193,14 +209,14 @@
 
 .user__menu {
   border-radius: 5px;
+  z-index: 5;
   width: 270px;
   position: absolute;
   @include trans06;
   height: 0;
   overflow: hidden;
-  top: 70px;
+  top: 100px;
   right: 0px;
-  z-index: 2;
   box-shadow: 0px 5px 40px 0px rgba(82, 85, 90, 0.2);
   background-color: rgb(255, 255, 255);
   border-top: 0px solid $blue;
@@ -240,14 +256,14 @@
 }
 
 .header__seller-menu {
+  z-index: 5;
   border-radius: 5px;
   box-shadow: 0px 5px 40px 0px rgba(82, 85, 90, 0.2);
   border-top: 0px solid $blue;
   position: absolute;
-  z-index: 2;
   height: 0;
   overflow: hidden;
-  top: 69px;
+  top: 75px;
   right: -25px;
   background-color: #fff;
   color: #000;
@@ -281,6 +297,7 @@
 }
 
 .alarm__menu {
+  z-index:5;
   width: 370px;
   &-inner {
     background-color: #fff;
@@ -378,6 +395,7 @@
 }
 
 .circle__menu {
+  z-index: 5;
   width: 370px;
   &-title,
   &-item {
@@ -460,6 +478,7 @@
 }
 
 .cart__menu {
+  z-index: 5;
   width: 400px;
   .cart__item {
     background-color: #fff;
@@ -566,6 +585,77 @@
         background-color: #3e91e9;
         color: #000;
       }
+    }
+  }
+}
+.drop-down {
+  position: relative;
+  &:hover {
+    .drop-down__list {
+      height: auto;
+      border-top-width: 2px;
+      overflow: visible;
+      padding: 20px;
+      a {
+        line-height: 42px;
+      }
+      .drop-down__item {
+        overflow: visible;
+      }
+    }
+  }
+}
+.drop-down__list {
+  position: absolute;
+  height: 0;
+  width: 270px;
+  top: 80px;
+  left: 0px;
+  overflow: hidden;
+  @include trans06;
+  padding: 0 20px;
+  z-index: 5;
+  box-shadow: 0px 5px 40px 0px rgba(82, 85, 90, 0.2);
+  background-color: rgb(255, 255, 255);
+  border-top: 0px solid $blue;
+  li {
+    display: block;
+    a {
+      display: block;
+      padding: 0 10px;
+      color: $bgrey;
+      font-size: 15px;
+      line-height: 0px;
+      transition: all 0.4s;
+      &:hover {
+        color: #fff;
+        background-color: $blue;
+      }
+    }
+    & + li {
+      margin-left: 0;
+    }
+  }
+}
+.drop-down.drop-down__p {
+  position: static;
+}
+.drop-down__list.drop-down__page {
+  left: 0;
+  right: 0;
+  width: 100%;
+  @include flex-sb;
+  .drop-down__item-title {
+    border-bottom: 1px solid #e8ebf0;
+    margin-bottom: 20px;
+    color: #000;
+    line-height: 40px;
+    font-weight: 500;
+  }
+  .drop-down__item {
+    @include flex-sb;
+    ul {
+      width: 210px;
     }
   }
 }
@@ -676,7 +766,7 @@
 .search__form {
   form {
     position: relative;
-    z-index: 2;
+    //z-index: 2;
     //width: 100%;
     display: flex;
     justify-content: center;

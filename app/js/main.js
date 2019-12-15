@@ -39,6 +39,18 @@ $(function() {
     $('.filter__select-list').removeClass('active');
   });
 
+  $('.header__menu-btn').on('click', function(){
+    $('.header__menu-list').slideToggle();
+  });
+
+  $('.header__user-menu').on('click', function(){
+    $('.header__user').toggleClass('active');
+  });
+
+  $('.drop-down').on('click',function(){
+    $(this).children('.drop-down__list').toggleClass('active');
+  });
+
       var mixer = mixitup('.products__box');
 
 
