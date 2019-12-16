@@ -51,6 +51,15 @@ $(function() {
     $(this).children('.drop-down__list').toggleClass('active');
   });
 
+  $('.details__tabs .tab').on('click', function(event) {
+    var id = $(this).attr('data-id');
+      $('.details__tabs').find('.tab-item').removeClass('active-tab').hide();
+      $('.details__tabs .tabs').find('.tab').removeClass('active');
+      $(this).addClass('active');
+      $('#'+id).addClass('active-tab').fadeIn();
+      return false;
+    });
+
       var mixer = mixitup('.products__box');
 
 
