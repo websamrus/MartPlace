@@ -5,6 +5,11 @@ $(function() {
         starWidth: "12px",
         readOnly: true
       });
+      $(".rate__star").rateYo({
+        rating: 4.8,
+        starWidth: "17px",
+        readOnly: true
+      });
 
       $(".items__slider").slick({
         
