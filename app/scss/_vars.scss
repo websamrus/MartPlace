@@ -16,6 +16,10 @@ $bgrey: #54667a;
   display: flex;
   justify-content: space-between;
 }
+@mixin flex-start {
+  display: flex;
+  justify-content: flex-start;
+}
 @mixin flex-center {
   display: flex;
   justify-content: center;
