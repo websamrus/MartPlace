@@ -1,3 +1,24 @@
+@media screen and (max-width: 1190px) {
+  .items__slider {
+    .products__item {
+      //height: 456px;
+      &-img,
+      &-btn {
+        min-width: 450px;
+      }
+
+      &-bt {
+        margin-bottom: 25px;
+      }
+      &-info {
+        padding: 10px;
+      }
+      &-star {
+        margin-right: 10px;
+      }
+    }
+  }
+}
 @media screen and (max-width: 1030px) {
   .footer__inner {
     flex-wrap: wrap;
@@ -22,6 +43,19 @@
     width: 100%;
     & + & {
       margin-top: 20px;
+    }
+  }
+}
+@media screen and (max-width: 980px) {
+  .items__slider {
+    .products__item {
+      &-box {
+        padding: 25px;
+      }
+      &-img,
+      &-btn {
+        min-width: 400px;
+      }
     }
   }
 }
@@ -85,9 +119,9 @@
 
   .drop-down__list.drop-down__page {
     display: none;
-    .drop-down__item{
+    .drop-down__item {
       justify-content: flex-start;
-      ul+ul{
+      ul + ul {
         margin-left: 30px;
       }
     }
@@ -129,6 +163,33 @@
   .header__seller-message {
     display: none;
   }
+  .search__form form .search__form-btn {
+    max-width: 150px;
+    margin-left: 20px;
+  }
+  .items__slider {
+    .products__item {
+      &-box {
+        padding-bottom: 5px;
+      }
+    }
+  }
+  .features__inner {
+    padding: 30px 0 40px;
+  }
+}
+
+@media screen and(max-width: 850px) {
+  .items__slider {
+    .products__item {
+      margin: 0 auto;
+      display: block;
+      max-width: 400px;
+      &-img {
+        height: 230px;
+      }
+    }
+  }
 }
 
 @media screen and (max-width: 750px) {
@@ -168,7 +229,7 @@
   }
   .header__seller-info {
     margin-top: 20px;
-}
+  }
   .header__seller-menu {
     .cart__item-img {
       display: none;
@@ -178,8 +239,24 @@
     width: 320px;
   }
   .main {
-    padding: 50px 0 70px;
+    padding: 50px 0 100px;
   }
+  .search__form form .search__form-select {
+    min-width: 170px;
+    select {
+      width: 170px;
+      padding-left: 20px;
+      color: #555;
+      outline: transparent;
+    }
+  }
+  .features__inner {
+    flex-wrap: wrap;
+    .features__item {
+      max-width: 70%;
+    }
+  }
+
   .footer__inner {
     justify-content: flex-start;
   }
@@ -193,10 +270,39 @@
     margin-top: 20px;
   }
 }
+@media screen and (max-width: 640px) {
+  .search__form form .search__form-select {
+    min-width: 150px;
+    select {
+      width: 150px;
+      padding-left: 20px;
+      color: #555;
+      outline: transparent;
+    }
+  }
+  .search__form {
+    height: 140px;
+    padding: 10px 20px;
+    form {
+      flex-wrap: wrap;
+      .search__form-btn {
+        max-width: 100%;
+        margin-left: 0;
+        margin-top: 10px;
+      }
+    }
+  }
+}
 
 @media screen and (max-width: 600px) {
   .header__seller-cart {
     display: none;
+  }
+  .items__title-btn {
+    display: none;
+  }
+  .items__title-text {
+    margin: 0 auto;
   }
 }
 @media screen and (max-width: 470px) {
@@ -210,19 +316,18 @@
     min-width: 260px;
   }
   .drop-down__list.drop-down__page {
-
-    .drop-down__item{
-     flex-wrap: wrap;
-     ul{
-       width: 100%;
-       &+ul{
-         margin-left: 0;
-       }
-     }
+    .drop-down__item {
+      flex-wrap: wrap;
+      ul {
+        width: 100%;
+        & + ul {
+          margin-left: 0;
+        }
+      }
     }
   }
   .main {
-    padding: 30px 0 50px;
+    padding: 30px 0 100px;
     .main__title {
       font-size: 30px;
       line-height: 40px;
@@ -243,6 +348,37 @@
       }
     }
   }
+  .items__slider .products__item-info-box {
+    flex-wrap: wrap;
+    .products__item-buy {
+      width: 38%;
+      margin-top: 7px;
+    }
+  }
+  .search__form {
+    height: 140px;
+    padding: 10px 20px;
+    form {
+      .search__form-select {
+        display: none;
+      }
+    }
+  }
+  .features {
+    margin-top: -70px;
+  }
+  .features__inner {
+    padding: 10px 0 10px;
+    .features__item {
+      max-width: 100%;
+      .features__item-title {
+        margin: 10px 0 10px;
+      }
+    }
+  }
+  .items__title-text {
+    font-size: 24px;
+  }
   .banner__inner {
     padding: 50px 0;
     .banner__title {
@@ -250,6 +386,7 @@
       margin-bottom: 10px;
     }
   }
+
   .footer__col-title {
     margin-bottom: 25px;
   }
@@ -266,6 +403,23 @@
   .user__menu {
     right: auto;
     left: 0;
+  }
+
+  .search__form {
+    form {
+      min-width: 100%;
+    }
+  }
+  .items__slider .products__item-bt {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    a:last-child {
+      margin-top: 5px;
+    }
+    a:first-child {
+      margin-right:20px;
+    }
   }
   .footer__col-l + .footer__col-l {
     margin-left: 0;

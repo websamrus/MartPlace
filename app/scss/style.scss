@@ -590,6 +590,7 @@
 
 .drop-down {
   position: relative;
+  z-index: 10;
   &:hover {
     .drop-down__list {
       height: auto;
@@ -608,6 +609,7 @@
 
 .drop-down__list {
   position: absolute;
+  z-index: 10;
   height: 0;
   width: 270px;
   top: 80px;
@@ -641,9 +643,11 @@
 
 .drop-down.drop-down__p {
   position: static;
+  z-index: 10;
 }
 
 .drop-down__list.drop-down__page {
+  z-index: 10;
   left: 0;
   right: 0;
   width: 100%;
@@ -656,6 +660,7 @@
     font-weight: 500;
   }
   .drop-down__item {
+    z-index: 10;
     @include flex-sb;
     ul {
       width: 210px;
@@ -737,12 +742,13 @@
 //start search//
 .search-form {
   padding: 40px 20px;
+  height: 100px;
   background-color: #fff;
   box-shadow: 0px 4px 20px 0px rgba(0, 0, 0, 0.08);
   border-radius: 6px;
   position: relative;
   transform: translateY(-50%);
-  z-index: 2;
+  z-index: 0;
   &::before,
   &::after {
     content: "";
@@ -754,7 +760,7 @@
     left: 0;
     right: 0;
     margin: 0 auto;
-    z-index: 1;
+    z-index: -1;
   }
   &::before {
     top: -13px;
@@ -768,8 +774,8 @@
 
 .search__form {
   form {
+    padding-top: 15px;
     position: relative;
-    //z-index: 2;
     //width: 100%;
     display: flex;
     justify-content: center;
@@ -795,14 +801,15 @@
     .search__form-select select {
       background: transparent;
       cursor: pointer;
-      height: 54px;
+      height: 44px;
       width: 195px;
       padding-left: 20px;
       color: $grey;
       outline: transparent;
     }
-    button {
-      max-width: 225px;
+    .search__form-btn {
+      max-width: 200px;
+      width: 100%;
       margin-left: 30px;
       border-radius: 4px;
       background-color: $blue;
@@ -810,26 +817,31 @@
     }
   }
   &-select {
-    height: 54px;
-    width: 183px;
+    height: 44px;
+    min-width: 195px;
     background-color: #fff;
+    border: 1px solid #dcdcdc;
     overflow: hidden;
     position: relative;
     &::before {
       content: "\e874";
+      width: 10px;
+      height: 10px;
+      background-color: #fff;
       position: absolute;
       font-family: "Linearicons-Free";
       font-size: 10px;
       right: 5px;
+      z-index: 1;
       @include top50;
       color: #555;
     }
   }
   &-form {
+    //z-index: 2;
     display: flex;
     max-width: 810px;
     width: 100%;
-    border: 1px solid #dcdcdc;
     border-radius: 4px;
   }
 }
@@ -900,6 +912,7 @@
     &-img {
       min-width: 560px;
       height: 456px;
+      @include bg-img;
     }
     &-btn {
       min-width: 560px;
@@ -936,9 +949,9 @@
       justify-content: space-between;
       &-box {
         display: flex;
-        justify-content: flex-start;
+        justify-content: space-between;
         align-items: center;
-        width: 245px;
+        width: 100%;
       }
     }
     &-price {
@@ -3253,7 +3266,7 @@
       padding: 10px 0 100px 20px;
       border: 1px solid #ececec;
     }
-    button{
+    button {
       display: block;
       margin: 0 auto;
       width: 170px;
@@ -3262,21 +3275,21 @@
     }
   }
 }
-.map{
+.map {
   height: 400px;
   background-color: #e3e6ec;
 }
 
 //error
-.error{
-  &__inner{
+.error {
+  &__inner {
     padding: 80px 0 100px;
     text-align: center;
   }
-  &__title{
+  &__title {
     margin: 40px 0;
   }
-  &__btn{
+  &__btn {
     margin: 0 auto;
     width: 190px;
     height: 50px;
@@ -3285,21 +3298,21 @@
 }
 
 //terms
-.terms{
+.terms {
   background-color: #eff1f5;
-  &__inner{
+  &__inner {
     padding: 60px 0 120px;
   }
-  &__box{
+  &__box {
     padding-bottom: 90px;
   }
 }
-.terms__item{
-  &-title{
+.terms__item {
+  &-title {
     padding: 40px 30px 30px;
     border-bottom: 1px solid #ececec;
   }
-  &-text{
+  &-text {
     padding: 30px 35px 10px 30px;
     line-height: 30px;
   }

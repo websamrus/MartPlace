@@ -12,7 +12,14 @@ $(function() {
       });
 
       $(".items__slider").slick({
-        
+        responsive: [{
+          breakpoint: 600,
+          settings: {
+              arrows: false,
+              autoplay: true,
+              autoplaySpeed: 3000,
+          }
+      }]
       })
 
       $(".followers__slider").slick({
