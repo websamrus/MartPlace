@@ -26,7 +26,27 @@ $(function() {
         infinite: true,
         slidesToShow: 3,
         slidesToScroll: 1,
-        variableWidth: true
+        variableWidth: true, 
+        responsive: [{
+          breakpoint: 1190,
+          settings: {
+            slidesToShow: 2,
+            variableWidth: false, 
+          }
+      },
+      {
+          breakpoint: 800,
+          settings: {
+            slidesToShow: 1,
+            variableWidth: false, 
+            arrows: false,
+            slidesToScroll: 1,
+            autoplay: true,
+            autoplaySpeed: 3000,
+          }
+    },
+    ]
+
       })
 
       

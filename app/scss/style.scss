@@ -1424,7 +1424,7 @@
   &__sell,
   &__buy {
     width: 50%;
-    height: 560px;
+    //height: 560px;
     @include bg-img;
     padding: 100px 20px 40px;
     text-align: center;
@@ -1550,12 +1550,18 @@
     padding: 100px 0;
   }
   &__box {
-    @include flex-sb;
+    margin-left: -15px;
+    @include flex-start;
   }
 }
 
+
+
+
 .blog__box {
   .products__item {
+    flex-basis: calc(33.333% - 30px);
+    margin: 0 15px;
     &-box {
       height: 180px;
       overflow: hidden;
