@@ -2362,7 +2362,10 @@
         }
     }
     .filter__select-form {
-        padding: 30px 40px;
+        padding: 0 40px;
+    }
+    .filter__select {
+        align-items: center;
     }
 }
 
